@@ -1,0 +1,31 @@
+on run {input, parameters}
+	set volume with output muted #Turns off the volume
+	tell application "System Settings" to activate
+	delay 1
+	tell application "System Events"
+		key code 3 using command down #Activate Search
+		delay 1
+		keystroke "System speech"
+		delay 2
+		key code 125
+		delay 1
+		key code 125
+		delay 1
+		key code 96 using command down #activate voiceover
+		delay 2 #waiting to load, increase if buggy
+		key code 48 #tab (activates menu)
+		delay 2
+		key code 49 #Space to open menu
+		delay 1
+		keystroke "English" #Choose your language. First letter is enoufgh like N for Norwegian.
+		delay 1
+		key code 36 #Enter
+		delay 1
+		key code 96 using command down #de-activate voiceover	
+		delay 1
+		tell application "System Settings" to quit
+		delay 2
+		set volume without output muted #Turn the volume back on
+	end tell
+	return input
+end run
