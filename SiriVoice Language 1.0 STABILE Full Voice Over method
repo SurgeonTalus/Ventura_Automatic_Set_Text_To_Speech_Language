@@ -1,5 +1,6 @@
 #MAC OS 13 VENTURA: 
 #This script lets you change language on Ventura, so that #you can get the Siri voice on multiple languages. 
+# Set your desired language on line 22. Make one copy of the script pr language
 #Open automator -> Add run apple script -> Past the script #and create an app.
 
 #The script works by activating Voice over to navigate, so #you have to deactivate the VoiceOver welcome screen for it #to work correctly. On the first run you will be told that #the app lacks permission to keystroke. 
@@ -26,7 +27,7 @@ on run {input, parameters}
 		delay 1
 		key code 49 #SPACE Entering System speech language MENU
 		delay 1
-		keystroke "N" #Choose your language. First letter is enoufgh like N for Norwegian.
+		keystroke "English" #Choose your language. First letter is enoufgh like N for Norwegian.
 		delay 1
 		key code 36 #ENTER Selects the language
 		delay 1
